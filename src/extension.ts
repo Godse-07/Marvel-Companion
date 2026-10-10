@@ -77,7 +77,7 @@ export function activate(context: vscode.ExtensionContext) {
       panel = vscode.window.createWebviewPanel(
         "marvelCompanion",
         `${character.label.replace(/\$\([^)]+\)\s*/, "")} Companion`,
-        vscode.ViewColumn.Beside,
+        vscode.ViewColumn.Active,
         {
           enableScripts: true,
           retainContextWhenHidden: true,
@@ -91,7 +91,7 @@ export function activate(context: vscode.ExtensionContext) {
         panel = undefined;
       });
     } else {
-      panel.reveal(vscode.ViewColumn.Beside);
+      panel.reveal(vscode.ViewColumn.Active);
     }
 
     const imageUri = panel.webview.asWebviewUri(
